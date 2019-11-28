@@ -1,5 +1,6 @@
 # pakman manifest
 
 index.html index.html.erb
+atom.xml atom.xml.erb
 
 css/digest.css

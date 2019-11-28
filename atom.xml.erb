@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+	<title><%= site.title %></title>
+	<subtitle>Blog posts from the UK government software development community</subtitle>
+	<!--<link href="http://example.org/feed/" rel="self" />
+	<link href="http://example.org/" />-->
+	<id>urn:uuid:a2e51e11-e61e-4c5e-b9aa-17895c0ce610</id>
+	<updated><%= site.items.last.updated %></updated>
+
+<%
+   items = site.items.latest.limit(50)
+   ItemCursor.new( items ).each do |item, new_date, new_feed|
+%>
+	<entry>
+		<title><%= CGI.escapeHTML(item.title) %></title>
+		<link href="<%= item.url %>" />
+		<link rel="alternate" type="text/html" href="<%= item.url %>"/>
+		<id>urn:uuid:<%= item.guid %></id>
+		<updated><%= item.updated %></updated>
+		<% if item.content %>
+		<content type="html">
+			<%= CGI.escapeHTML(item.content) %>
+		</content>
+		<% elsif item.summary %>
+		<summary>
+			<%= CGI.escapeHTML(item.summary) %>
+		</summary>
+		<% else %>
+			<%= throw "no content or summary for #{item.url}" %>
+		<% end %>
+		<author>
+			<name><%= CGI.escapeHTML(item.feed.title) %></name>
+		</author>
+	</entry>
+<% end %>
+</feed>
