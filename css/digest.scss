@@ -3,7 +3,7 @@
 
 
 $primary-color:   #0b0b0b;          //  black for title, etc.
-$secondary-color: #777777;   // grey-ish
+$secondary-color: #555555;   // grey-ish
 
 $link-color:          #8b0000;  // darkred; see wikipedia web colors
 $link-visited-color:  #b22222;  // firebrick (red); see wikipedia web colors
@@ -53,12 +53,12 @@ a {
 }
 
 .contents {
-  
+
    ol { color: $secondary-color; }
-   
+
    .item-feed-title {
       font-size: $small-font-size;
-      
+
       a {
         color: $secondary-color;
         &:visited {
@@ -68,9 +68,9 @@ a {
    }
 
    .item-published {
-      font-size: $small-font-size;    
+      font-size: $small-font-size;
    }
-   
+
 }
 
 .item {
@@ -96,7 +96,7 @@ a {
        font-size: $small-font-size;
     }
   }
- 
+
    .item-content,
    .item-summary
   {
