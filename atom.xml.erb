@@ -31,7 +31,7 @@
 			<%= throw "no content or summary for #{item.url}" %>
 		<% end %>
 		<author>
-			<name><%= CGI.escapeHTML(item.feed.title) %></name>
+			<name><%= CGI.escapeHTML(item.feed.author || item.feed.title) %></name>
 		</author>
 	</entry>
 <% end %>
