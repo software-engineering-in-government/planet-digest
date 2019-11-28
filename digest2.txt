@@ -1,0 +1,5 @@
+# pakman manifest
+
+index.html index.html.erb
+
+css/digest.css

@@ -1,5 +1,0 @@
-# pakman manifest
-
-__file__.digest.html digest.html.erb
-
-css/digest.css
