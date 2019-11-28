@@ -4,3 +4,4 @@ index.html index.html.erb
 atom.xml atom.xml.erb
 
 css/digest.css
+images/rss.svg
