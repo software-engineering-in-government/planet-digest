@@ -11,15 +11,15 @@
 
 <div class='container'>
 
-<div class='masthead'>
+<header class='masthead'>
   <h1><%= site.title %></h1>
   Blog posts from the UK government software development community
-</div>
+</header>
 
 
 <!-- 1) list headlines w/ inline links -->
 
-<div class='contents'>
+<nav class='contents'>
 
 <p><b>Contents</b></p>
 <ol>
@@ -37,9 +37,9 @@
 <% end %><!-- each item -->
 
 </ol>
-</div>
+</nav>
 
-
+<main>
 
 <!-- 2) list full articles -->
 
@@ -56,10 +56,10 @@
 </h2>
 
   <span class='item-feed-title'>
-   <%= link_to item.feed.title, item.feed.url %>  &bull; 
+   <%= link_to item.feed.title, item.feed.url %>  &bull;
   </span>
   <span class='item-published'>
-    <%= item.published.strftime('%A %B %d, %Y @ %H:%M') %> &bull;  
+    <%= item.published.strftime('%A %B %d, %Y @ %H:%M') %> &bull;
     <%= time_ago_in_words( item.published ) %>
   </span>
 </div>
@@ -78,7 +78,7 @@
 <% else %>
   -/-
 <% end %>
-  
+
 </div>
 </div><!-- item-body -->
 </div><!-- item -->
@@ -86,7 +86,7 @@
 <% end %><!-- each item -->
 
 </div><!-- container -->
-
+</main>
 
 </body>
 </html>
